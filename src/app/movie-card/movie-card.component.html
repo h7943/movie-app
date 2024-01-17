@@ -1,8 +1,8 @@
-<div class="card">
-  <!-- <img [src]="movieItem.image" class="card-img-top" alt="Image 1"> -->
+<div style="max-height: 400px;" class="card m-2">
   <div class="card-body">
-    <img [src]="movieItem.poster_path" alt="">
-    <h5 class="card-title">{{movieItem.id}}</h5>
-    <p class="card-text">{{movieItem.release_date}}</p>
-  </div>
+    <img style="max-height: 280px;" [src]="'https://image.tmdb.org/t/p/w500/' + movieItem.poster_path" class="card-img-top" [alt]="movieItem.title">
+    <h4 class="card-title" [ngClass]="movieItem.adult ?'text-success':''">{{movieItem.title}}</h4>
+    <span class="card-text">{{movieItem.release_date}}<span> 
+    <span class="offset-5">heart</span>
+  <div>
 </div>

@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -5,7 +6,8 @@ import { Router } from '@angular/router';
   selector: 'app-movie-card',
   standalone: true,
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.css']
+  styleUrls: ['./movie-card.component.css'],
+  imports: [NgClass]
 })
 export class MovieCardComponent {
   @Input() movieItem: any;
