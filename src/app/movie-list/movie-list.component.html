@@ -1,0 +1,13 @@
+<h2>Games List</h2>
+<hr />
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  @for(movie of movies; track movie.id ; let i = $index){
+  <div class="col">
+     <app-movie-card [movieItem]="movie"></app-movie-card>
+  </div>
+  } @empty {
+  <p>List is empty</p>
+  }
+</div>
