@@ -32,10 +32,7 @@
 
         <div class="col-md-12 mt-3">
             @for (logo of logos; track $index) {
-                <img style="width: 50px; height: 50px;" class="m-2" [src]="'https://image.tmdb.org/t/p/w500/' + logo">
+            <img style="width: 50px; height: 50px;" class="m-2" [src]="'https://image.tmdb.org/t/p/w500/' + logo">
             }
-            
-        <div class="col-md-12">
-            <img src="https://image.tmdb.org/t/p/w500{{ movie.logo_path }}" alt="Movie Poster">
         </div>
     </div>
