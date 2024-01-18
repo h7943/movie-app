@@ -3,10 +3,11 @@
 </div>
 <hr>
 <h1 class="m-4">Recommendations</h1>
-<div style="padding: 2vw;" class="row row-cols-1 row-cols-md-6 g-4">
-  @for(movie of movies; track movie.id ; let i = $index){
-  <div class="col">
+<div *ngIf="movies && movies.length > 0" style="padding: 2vw;" class="row row-cols-1 row-cols-md-6 g-4">
+  <div *ngFor="let movie of movies; let i = index" class="col">
     <app-movie-recommend [movie]="movie"></app-movie-recommend>
   </div>
-  }
+</div>
+<div *ngIf="!movies || movies.length === 0" class="m-4">
+  No recommendations available.
 </div>

@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 @Component({
   selector: 'app-movie-recommend',
   standalone: true,
@@ -12,7 +11,6 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class MovieRecommendComponent implements OnInit {
   constructor(private router:Router){}
-
   redirectToDetails(id: number) {
     this.router.navigate ( [ '/details', id ] );
   }
