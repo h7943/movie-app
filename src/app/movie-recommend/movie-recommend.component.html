@@ -1,11 +1,11 @@
 <div style="height: 350px;" class=" m-3">
 	<div class="card-body">
-		<img style="height: 200px;cursor: pointer;" (click)="redirectToDetails(movie.id)"
+		<img style="height: 250px;cursor: pointer;" (click)="redirectToDetails(movie.id)"
 			[src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" [alt]="movie.title">
 		<h4 class="card-title mt-4" style="cursor: pointer;" (click)="redirectToDetails(movie.id)">{{movie.title}}</h4>
 	</div>
-	<div class="d-flex p-2 mt-2">
-		<span class="card-text me-auto">{{movie.release_date}}</span>
+	<div class="d-flex p-2">
+		<span class="date me-auto">{{movie.release_date}}</span>
 		<span class="ms-auto"><i class="fa-regular fa-heart fa-2x"></i></span>
 	</div>
 </div>
