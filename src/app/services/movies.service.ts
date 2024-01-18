@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Input } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 
 @Injectable({
@@ -9,7 +9,7 @@ export class MoviesService {
   apiKey: string = "3efe58175903c431f91fd13bff03e942"
   constructor(private http: HttpClient) {}
 
-getPopularMovies() {
+getPopularMovies(){
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${this.apiKey}`;
   return this.http.get(url)
   .pipe(
@@ -25,5 +25,4 @@ getPopularMovies() {
   getRecommendDetails(movie_id: number){
     return this.http.get(`https://api.themoviedb.org/3/movie/${movie_id}/recommendations?api_key=${this.apiKey}`)
   }
-  
 }

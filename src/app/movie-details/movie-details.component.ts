@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnChanges, OnInit } from "@angular/core";
 import { MoviesService } from "../services/movies.service";
 import { CommonModule } from "@angular/common";
 import { Movie } from '../interface/movie';
@@ -13,27 +13,25 @@ import { MovieRecommendComponent } from "../movie-recommend/movie-recommend.comp
     imports: [CommonModule, MovieItemDetailsComponent, MovieRecommendComponent]
 })
 export class MovieDetailsComponent implements OnInit {
-  movie: any;
-  movies: any;
+  movie:any;
+  movies : Movie[] = [];
   @Input() id!: number;
   constructor(private moviesService: MoviesService) {}
+  
   ngOnInit() {
     this.moviesService.getMovieDetails(this.id).subscribe((res) => {
       if (res) {
-        this.movie = res;
-        console.log(this.movie.title);
-        
+        this.movie = res;        
       } else {
-        console.error("No products found in the response.");
+        console.error("No Movie found in the response.");
       }
     });
-
+    
     this.moviesService.getRecommendDetails(this.id).subscribe((res:any) => {
       if (res) {
-        console.log(`this id ${this.id}`)
         this.movies = res.results;
       } else {
-        console.error("No products found in the response.");
+        console.error("No Movies recommend found in the response.");
       }
     });
 

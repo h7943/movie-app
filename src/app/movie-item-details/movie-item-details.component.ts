@@ -1,12 +1,12 @@
-import { AfterContentChecked, Component, Input, OnInit } from '@angular/core';
-import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { AfterContentChecked, Component, Input, NgModule, OnInit } from '@angular/core';
+// import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+// NgbRatingModule
 @Component({
   selector: 'app-movie-item-details',
   standalone: true,
   templateUrl: './movie-item-details.component.html',
   styleUrls: ['./movie-item-details.component.css'],
-  imports:[NgbRatingModule]
+  imports:[]
 })
 export class MovieItemDetailsComponent implements AfterContentChecked {
   @Input() movie: any;
