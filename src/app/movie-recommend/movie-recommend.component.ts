@@ -14,7 +14,7 @@ export class MovieRecommendComponent implements OnInit {
   constructor(private router:Router){}
 
   redirectToDetails(id: number) {
-    this.router.navigate([`../../movie-details/${id}`]);
+    this.router.navigate ( [ '/details', id ] );
   }
   @Input() movie:any
 

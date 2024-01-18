@@ -1,5 +1,6 @@
 .poster{
     height: 500px;border-radius: 5%;
+    box-shadow: -12px -4px 14px rgb(55, 19.4, .6), 10px -2px 8px rgb(0, 4, 1);
 }
 .date{
     font-weight: 200;font-size: 12px;
