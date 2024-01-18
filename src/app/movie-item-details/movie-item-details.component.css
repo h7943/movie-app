@@ -1,15 +1,12 @@
-i {
-    position: relative;
-    display: inline-block;
-    font-size: 2.5rem;
-    padding-right: 0.1rem;
-    color: #d3d3d3;
+.poster{
+    height: 500px;border-radius: 5%;
 }
-
-.filled {
-    color: red;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
+.date{
+    font-weight: 200;font-size: 12px;
+}
+.btn1{
+    background-color: yellow; border: none; border-radius: 20px; font-weight: 300;padding:0 12px;
+}
+.logo{
+    width: 80px; height: 80px;
 }
