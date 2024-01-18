@@ -10,12 +10,18 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class MovieItemDetailsComponent implements AfterContentChecked {
   @Input() movie: any;
+
+  logos !:string
   names!: string
   constructor() { }
   
   ngAfterContentChecked() {
     const genreNames = this.movie.genres.map((genre: { name: any; }) => genre.name);
     this.names = genreNames
+
+    const paths = this.movie.production_companies.map((path: { logo_path: any; }) => path.logo_path)
+    this.logos = paths
     // console.log(genreNames)
   }
 }
+
