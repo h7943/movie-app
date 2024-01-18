@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-4 p-2">
+        <img style="height: 500px;border-radius: 5%;" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+            class="card-img-top" [alt]="movie.title">
+    </div>
+    <div class="col-md-7 p-4 me-4">
+        <div class="d-flex  mt-2">
+            <h1 class="card-text me-auto">{{movie.title}}</h1>
+            <span class="ms-auto"><i class="fa-regular fa-heart fa-2x"></i></span>
+        </div>
+        <span style="font-weight: 200;font-size: 12px;">{{movie.release_date}}</span>
+        <div class="row mt-3">
+            <div class="d-flex  mt-2">
+                <ngb-rating class="card-text me-3" [rate]="movie.vote_average" />
+                <p><span class="text-danger">{{movie.vote_count}}</span></p>
+            </div>
+            <div class="col-md-12">
+                <p>{{ movie.overview }}</p>
+            </div>
+            <div class="col-md-10">
+                @for (name of names; track $index) {
+                <button class="m-3 pe-3">{{name}}</button>
+                }
+            </div>
+        </div>
+        <div class="col-md-7 mt-3">
+            <div class="d-flex  mt-2">
+                <span class="card-text me-auto">Time-Diration: {{movie.duration}}</span>
+                <span class="ms-auto">Language: {{movie.original_language}}</span>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <img src="https://image.tmdb.org/t/p/w500{{ movie.logo_path }}" alt="Movie Poster">
+        </div>
+    </div>

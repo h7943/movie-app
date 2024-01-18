@@ -1,3 +1,12 @@
-<p>
-  movie-details works!
-</p>
+<div class="col m-4 p-2">
+  <app-movie-item-details [movie]="movie"></app-movie-item-details>
+</div>
+<hr>
+<h1 class="m-4">Recommendations</h1>
+<div style="padding: 2vw;" class="row row-cols-1 row-cols-md-6 g-4">
+  @for(movie of movies; track movie.id ; let i = $index){
+  <div class="col">
+    <app-movie-recommend [movie]="movie"></app-movie-recommend>
+  </div>
+  }
+</div>

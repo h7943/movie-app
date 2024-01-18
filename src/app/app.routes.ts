@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
 import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { WishListComponent } from './wish-list/wish-list.component';
 
 export const routes: Routes = [
-    {
-        path:"",
-        component: MovieListComponent,
-        title:"Movie"
-    }
+    { path: '', component: MovieListComponent ,title: "Movie"},
+    { path: 'movie-details/:id',component: MovieDetailsComponent},
+    { path: 'wishlist',component: WishListComponent},
+    { path: '**', component: NotFoundComponent},
 ];

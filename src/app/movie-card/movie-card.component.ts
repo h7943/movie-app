@@ -1,5 +1,5 @@
-import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule, NgClass } from '@angular/common';
+import { Component, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,21 +7,16 @@ import { Router } from '@angular/router';
   standalone: true,
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.css'],
-  imports: [NgClass]
+  imports: [NgClass,CommonModule]
 })
 export class MovieCardComponent {
   @Input() movieItem: any;
-  @Output() sendToParent = new EventEmitter<number>();
 
   constructor(private router: Router) {}
   
 
-  // redirectToDetails(id: number) {
-  //   this.router.navigate([`movie-details/${id}`], {
-  //     queryParams: {
-  //       category: 'action',
-  //     },
-  //   });
-  // }
+  redirectToDetails(id: number) {
+    this.router.navigate([`movie-details/${id}`]);
+  }
 
 }
