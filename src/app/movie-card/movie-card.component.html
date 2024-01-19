@@ -2,11 +2,11 @@
   <div class="card-body">
     <img style="height: 300px;cursor: pointer;" (click)="redirectToDetails(movieItem.id)"
       [src]="'https://image.tmdb.org/t/p/w500/' + movieItem.poster_path" class="card-img-top" [alt]="movieItem.title">
-    <h4 class="card-title mt-4" style="cursor: pointer;" [ngClass]="movieItem.adult ?'text-success':''"
+    <h4 class="card-title mt-5" style="cursor: pointer;" [ngClass]="movieItem.adult ?'text-success':''"
       (click)="redirectToDetails(movieItem.id)">{{movieItem.title}}</h4>
   </div>
   <div class="d-flex p-2 mt-2">
-    <span class="card-text me-auto">{{movieItem.release_date}}</span>
+    <span class="card-text date me-auto">{{date}}</span>
     <span (click)="toggleWishlist() " style="cursor: pointer;">
       <i   class="fa-regular fa-heart fa-2x" [ngClass]="{'filled': wishlistService.isInWishlist(movieItem)}"></i>
     </span>

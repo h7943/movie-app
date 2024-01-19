@@ -7,9 +7,9 @@
       </div>
       <div class="form-group">
         <div class="input-group">
-          <input type="text" class="form-control me-3" id="exampleInput" placeholder="Type here...">
+          <input type="text" class="form-control me-3" [(ngModel)]="name" id="exampleInput" placeholder="Type here...">
           <div class="input-group-append">
-            <button type="button" class="btn btn-info">Search</button>
+            <button type="button" (click)="getSearch()" class="btn btn-info">Search</button>
           </div>
         </div>
       </div>
@@ -18,7 +18,7 @@
 
   <h1 class="m-3 p-2">Popular Movies</h1>
   
-  <div style="padding: 2vw;" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+  <div style="padding: 2vw;" class="row mb-5 row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
     @for (movie of movies; track movie.id; let i = $index){
     <div class="col">
       <app-movie-card [movieItem]="movie"></app-movie-card>
@@ -28,4 +28,4 @@
 
     }
   </div>
-  
+  <app-paginations [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)"></app-paginations>

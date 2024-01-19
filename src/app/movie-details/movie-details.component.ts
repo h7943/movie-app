@@ -1,35 +1,36 @@
-import { Component, Input, OnChanges, OnInit } from "@angular/core";
+import { Component, Input, OnChanges, OnInit,HostListener } from "@angular/core";
 import { MoviesService } from "../services/movies.service";
 import { CommonModule } from "@angular/common";
 import { Movie } from '../interface/movie';
 import { MovieItemDetailsComponent } from "../movie-item-details/movie-item-details.component";
 import { MovieRecommendComponent } from "../movie-recommend/movie-recommend.component";
-
+import { ActivatedRoute, Data, Router } from "@angular/router";
+import { NotFoundComponent } from "../not-found/not-found.component";
 @Component({
     selector: "app-movie-details",
     standalone: true,
     templateUrl: "./movie-details.component.html",
     styleUrls: ["./movie-details.component.css"],
-    imports: [CommonModule, MovieItemDetailsComponent, MovieRecommendComponent]
+    imports: [CommonModule, MovieItemDetailsComponent, MovieRecommendComponent, NotFoundComponent]
 })
-export class MovieDetailsComponent implements OnInit {
-  movie:any;
+export class MovieDetailsComponent implements OnChanges {
+  movie !: Movie;
   movies : Movie[] = [];
   @Input() id!: number;
-  constructor(private moviesService: MoviesService) {}
-  
-  ngOnInit() {
-    this.moviesService.getMovieDetails(this.id).subscribe((res) => {
+  constructor(private moviesService: MoviesService,private route:ActivatedRoute, private router: Router) {}
+
+  ngOnChanges() {
+    // const currentId : any = this.route.snapshot.paramMap.get('id');
+    this.moviesService.getMovieDetails(this.id).subscribe((res:any) => {
       if (res) {
         this.movie = res;        
       } else {
-        console.error("No Movie found in the response.");
+        this.router.navigate ( ['/not-found'] );
       }
     });
-    
-    this.moviesService.getRecommendDetails(this.id).subscribe((res:any) => {
+    this.moviesService.getRecommendDetails(this.id).subscribe((res:Data) => {
       if (res) {
-        this.movies = res.results;
+        this.movies = res["results"];
       } else {
         console.error("No Movies recommend found in the response.");
       }

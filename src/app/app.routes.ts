@@ -6,7 +6,8 @@ import { WishListComponent } from './wish-list/wish-list.component';
 
 export const routes: Routes = [
     { path: '', component: MovieListComponent ,title: "Movie"},
-    { path: 'movie-details/:id',component: MovieDetailsComponent},
-    { path: 'wishlist',component: WishListComponent},
-    { path: '**', component: NotFoundComponent},
+    { path: 'movie-details/:id',component: MovieDetailsComponent, title: "Movie Details"},
+    { path: 'wishlist',component: WishListComponent, title: "Wishlist"},
+    { path: 'not-found', component: NotFoundComponent },
+    { path: '**', redirectTo: '/not-found' }
 ];
