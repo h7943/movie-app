@@ -1,13 +1,26 @@
-.poster{
-    height: 500px;border-radius: 5%;
-    box-shadow: -12px -4px 14px rgb(55, 19.4, .6), 10px -2px 8px rgb(0, 4, 1);
+.poster {
+  height: 500px;
+  border-radius: 5%;
+  box-shadow: -12px -4px 14px rgb(55, 19.4, 0.6), 10px -2px 8px rgb(0, 4, 1);
 }
-.date{
-    font-weight: 200;font-size: 12px;
+.date {
+  font-weight: 200;
+  font-size: 14px;
+  margin-left: 10px;
 }
-.btn1{
-    background-color: #FFE353; border: none; border-radius: 20px; font-weight: 300;padding:0 12px;
+.btn1 {
+  background-color: #ffe353;
+  border: none;
+  border-radius: 20px;
+  font-weight: 300;
+  padding: 0 12px;
 }
-.logo{
-    width: 80px; height: 80px;
+.logo {
+  width: 70px;
+  height: 70px;
 }
+.fa-heart {
+  position: relative;
+  color: #e74848; /* Default color */
+}
+

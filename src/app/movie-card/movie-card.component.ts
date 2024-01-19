@@ -1,6 +1,7 @@
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule, DatePipe, NgClass } from '@angular/common';
 import { Component, Input, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Movie } from '../interface/movie';
 
 @Component({
   selector: 'app-movie-card',
@@ -10,13 +11,18 @@ import { Router } from '@angular/router';
   imports: [NgClass,CommonModule]
 })
 export class MovieCardComponent {
-  @Input() movieItem: any;
-
-  constructor(private router: Router) {}
+  @Input() movieItem !: Movie;
+  date!:string
+  constructor(private router: Router,private route: ActivatedRoute, private datePipe:DatePipe) {}
   
-
-  redirectToDetails(id: number) {
-    this.router.navigate([`movie-details/${id}`]);
+  ngOnInit(): void {
+    this.date = this.formatDate(this.movieItem.release_date);
   }
 
+  redirectToDetails(id: number) {
+    this.router.navigate ( [ '/movie-details', id ] );
+  }
+  private formatDate(date: Date | string): string {
+    return this.datePipe.transform(date, 'MMM d, y') || '';
+  }
 }

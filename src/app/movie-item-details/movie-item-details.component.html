@@ -5,28 +5,33 @@
     </div>
     <div class="col-md-7 p-4 me-4">
         <div class="d-flex  mt-2">
-            <h1 class="card-text me-auto">{{movie?.title}}</h1>
-            <span class="ms-auto"><i class="fa-regular fa-heart fa-2x"></i></span>
+            <h1 class="card-text me-auto">{{movie.title}}</h1>
+            <span class="ms-auto mt-2" (click)="colorHeart()" *ngIf="isHeartFilled else nocolor">
+                <i class="fa-regular fa-heart fa-2x"></i>
+            </span>
+            <ng-template #nocolor>
+                <i (dblclick)="removeColor()" class="fas fa-heart fa-2x"></i>
+            </ng-template>
         </div>
-        <span class="date">{{movie?.release_date}}</span>
+        <span class="date">{{date}}</span>
         <div class="row mt-3">
-            <div class="d-flex  mt-2">
-                <!-- <ngb-rating class="card-text me-3" [rate]="movie.vote_average" /> -->
-                <p><span class="text-danger">{{movie?.vote_count}}</span></p>
+            <div class="d-flex">
+                <ngb-rating style="font-size: 34px;margin-top:-18px;color:#E4BA10" class="card-text mb-3 me-3" [rate]="movie.vote_average" />    
+                <span class="text-danger">({{movie.vote_count}})</span>
             </div>
             <div class="col-md-12">
-                <p>{{ movie?.overview }}</p>
+                <p>{{ movie.overview }}</p>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 @for (name of names; track $index) {
-                    <button class="btn1 m-3 pe-3"><span class="text-center">{{name}}</span></button>
+                    <button class="btn1 m-2 pe-3"><span class="text-center">{{name}}</span></button>
                 }
             </div>
         </div>
         <div class="col-md-7 mt-3">
             <div class="d-flex  mt-2">
-                <span class="card-text me-auto">Time-Duration : {{movie?.runtime}} Min</span>
-                <span class="ms-auto">Language: {{movie?.original_language}}</span>
+                <span class="card-text me-auto">Time-Duration : {{movie.runtime}} Min</span>
+                <span class="ms-auto">Language: {{movie.original_language}}</span>
             </div>
         </div>
 
