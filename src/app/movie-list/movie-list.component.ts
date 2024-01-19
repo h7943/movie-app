@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
-=======
-import { Component, Input, OnInit } from '@angular/core';
-import { MoviesService } from '../services/movies.service'
->>>>>>> c906d0fd8aed3a9bd476401f4a4d34d57f569747
 import { Movie } from '../interface/movie';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { PaginationService } from '../services/pagination-service.service';
@@ -21,7 +16,6 @@ import { Data } from '@angular/router';
 })
 export class MovieListComponent implements OnInit {
   movies: Movie[] = [];
-<<<<<<< HEAD
   currentPage: number = 1;
   totalPages: number = 1;
   name: string = '';
@@ -31,12 +25,7 @@ export class MovieListComponent implements OnInit {
     private paginationService: PaginationService
   ) {}
 
-=======
 
-
-
-  constructor(private moviesService: MoviesService) {}
->>>>>>> c906d0fd8aed3a9bd476401f4a4d34d57f569747
   ngOnInit() {
     // Load movies on component initialization
     this.loadMovies();
@@ -60,7 +49,6 @@ export class MovieListComponent implements OnInit {
     );
   }
 
-<<<<<<< HEAD
   onPageChange(page: number): void {
     this.paginationService.setCurrentPage(page);
   }
@@ -80,6 +68,4 @@ export class MovieListComponent implements OnInit {
   }
   
 }
-=======
-}
->>>>>>> c906d0fd8aed3a9bd476401f4a4d34d57f569747
+

@@ -1,53 +1,47 @@
 {
-  "hash": "4689df71",
-  "browserHash": "b8aae023",
+  "hash": "63e9cf18",
+  "browserHash": "9dc68ed7",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "f42b39fe",
+      "fileHash": "fba0c834",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "a8caf172",
+      "fileHash": "e5dfefee",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "c3db12bb",
+      "fileHash": "8d7f599b",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "2d50a415",
+      "fileHash": "dff786a2",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "3c232470",
+      "fileHash": "946c3826",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "d2a53d3c",
-      "needsInterop": false
-    },
-    "@ng-bootstrap/ng-bootstrap": {
-      "src": "../../../../../node_modules/@ng-bootstrap/ng-bootstrap/fesm2022/ng-bootstrap.mjs",
-      "file": "@ng-bootstrap_ng-bootstrap.js",
-      "fileHash": "927d9204",
+      "fileHash": "11888afb",
       "needsInterop": false
     },
     "rxjs": {
       "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
       "file": "rxjs.js",
-      "fileHash": "a003837a",
+      "fileHash": "cd3bcb33",
       "needsInterop": false
     }
   },
@@ -57,9 +51,6 @@
     },
     "chunk-PY3VLUSX": {
       "file": "chunk-PY3VLUSX.js"
-    },
-    "chunk-DKVYTAYP": {
-      "file": "chunk-DKVYTAYP.js"
     },
     "chunk-7QCV2LIA": {
       "file": "chunk-7QCV2LIA.js"
