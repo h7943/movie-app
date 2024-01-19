@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { WishlistService } from '../services/wishlist.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,8 +11,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public wishlistService: WishlistService) {}
+  
   ngOnInit() {
   }
 

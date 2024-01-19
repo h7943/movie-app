@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service'
 import { Movie } from '../interface/movie';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
@@ -12,6 +12,9 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class MovieListComponent implements OnInit {
   movies: Movie[] = [];
+
+
+
   constructor(private moviesService: MoviesService) {}
   ngOnInit() {
     this.moviesService.getPopularMovies().subscribe(
@@ -25,4 +28,5 @@ export class MovieListComponent implements OnInit {
       }
     );
   }
+
 }
