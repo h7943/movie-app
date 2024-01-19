@@ -53,19 +53,19 @@ export class MovieListComponent implements OnInit {
     this.paginationService.setCurrentPage(page);
   }
   
-  getSearch(movieName: string = this.name): void {
-    this.moviesService.getSearch(movieName).subscribe((data:Data) => {
-      const movies = data['results'];
-      // Loop through the array of movie objects
-      for (const movie of movies) {
-        // Access the "title" property and log the title
-        if(movie.title){
-          console.log(movie);
-        }
+  // getSearch(movieName: string = this.name): void {
+  //   this.moviesService.getSearch(movieName).subscribe((data:Data) => {
+  //     const movies = data['results'];
+  //     // Loop through the array of movie objects
+  //     for (const movie of movies) {
+  //       // Access the "title" property and log the title
+  //       if(movie.title){
+  //         console.log(movie);
+  //       }
         
-      }
-    });
-  }
+  //     }
+  //   });
+  // }
   
 }
 
