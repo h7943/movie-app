@@ -1,6 +1,5 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/router';
-import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { Movie } from '../interface/movie';
 import { DatePipe } from '@angular/common';
 
@@ -9,7 +8,7 @@ import { DatePipe } from '@angular/common';
   standalone: true,
   templateUrl: './movie-recommend.component.html',
   styleUrls: ['./movie-recommend.component.css'],
-  imports: [NgbAccordionModule,RouterLink]
+  imports: [RouterLink]
 })
 export class MovieRecommendComponent {
   @Input() movie!:Movie

@@ -1,15 +1,16 @@
 import { AfterContentChecked, Component, HostListener, Input, OnChanges, OnInit } from '@angular/core';
-import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
 import { Movie, Companie } from '../interface/movie';
 import { Genre } from '../interface/movie';
 import { DatePipe, NgClass, NgIf } from '@angular/common';
+// NgbRatingModule
 @Component({
   selector: 'app-movie-item-details',
   standalone: true,
   templateUrl: './movie-item-details.component.html',
   styleUrls: ['./movie-item-details.component.css'],
-  imports:[NgClass,NgbRatingModule, NgIf]
+  imports:[NgClass, NgIf]
 })
 export class MovieItemDetailsComponent implements OnChanges, OnInit {
   @Input() movie!: Movie;

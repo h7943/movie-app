@@ -1,3 +1,19 @@
-<p>
-  wish-list works!
-</p>
+
+<div class="container mt-5">
+  <h1 class="mb-4">WishList</h1>
+
+    <div class="row m-0">
+        <div class="col-md-4" *ngFor="let movie of wishlistService.getWishlist()">
+          <div class="card">
+            <img  [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" alt="Left Image">
+            <div class="card-body">
+              <h3 class="card-title">{{movie.title}}</h3>
+              <p class="card-text">{{ movie.overview }}</p>
+              <span class="rate">★ ★ ★ ★ ☆</span>
+              <button class="btn btn-primary" (click)="removeFromWishlist(movie)">Remove from Wishlist</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  
+</div>
