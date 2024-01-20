@@ -1,9 +1,9 @@
-<div class="row">
-    <div class="col-md-4 p-2">
+<div class="row me-2">
+    <div class="col-md-4 me-4 ">
         <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
             class="poster card-img-top" [alt]="movie.title">
     </div>
-    <div class="col-md-7 p-4 me-4">
+    <div class="col-md-6">
         <div class="d-flex  mt-2">
             <h1 class="card-text me-auto">{{movie.title}}</h1>
             <span class="ms-auto mt-2" (click)="colorHeart()" *ngIf="isHeartFilled else nocolor">
@@ -13,7 +13,7 @@
                 <i (dblclick)="removeColor()" class="fas fa-heart fa-2x"></i>
             </ng-template>
         </div>
-        <span class="date">{{date}}</span>
+        <span style="margin-top: -20px;" class="date">{{date}}</span>
         <div class="row mt-3">
             <div class="d-flex">
                 <!-- <ngb-rating style="font-size: 34px;margin-top:-18px;color:#E4BA10" class="card-text mb-3 me-3" [rate]="movie.vote_average" />     -->
@@ -29,12 +29,14 @@
             </div>
         </div>
         <div class="col-md-9 mt-3">
-            <div class="d-flex  mt-2">
-                <span class="card-text me-auto">Time-Duration : {{movie.runtime}} Min</span>
-                <span class="offset-2 me-2">Language:</span>
-                <span *ngFor="let item of movie.spoken_languages" class="me-3"> {{ item.english_name }}</span>
+            <div class="d-flex flex-column mt-2">
+                <span class="card-text col-md-4 mb-2">Time-Duration: {{ movie.runtime }} Min</span>
+                <div class="d-flex col flex-wrap">
+                    <span class="me-md-auto mb-2 mb-md-0">Language:</span>
+                    <span *ngFor="let item of movie.spoken_languages" class="me-3 mb-2"> {{ item.english_name }}</span>
+                </div>
             </div>
-        </div>
+        </div>        
 
         <div class="col-md-12 mt-2">
             @for (logo of logos; track $index) {
@@ -43,7 +45,7 @@
                 }
             }
         </div>
-        <a href="https://www.imdb.com/title/{{movie.imdb_id}}/" style="border-bottom: 1px solid rgb(240, 188, 135);border-top: 1px solid rgb(240, 188, 135);" class="btn text-danger link mt-1" target="_blank">
+        <a href="https://www.imdb.com/title/{{movie.imdb_id}}/" style="border-bottom: 1px solid rgb(240, 188, 135);border-top: 1px solid rgb(240, 188, 135);" class="btn text-danger link mt-3" target="_blank">
             Website <i class="fas fa-link"></i>
          </a>
     </div>
