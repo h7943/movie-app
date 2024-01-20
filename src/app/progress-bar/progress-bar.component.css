@@ -1,0 +1,15 @@
+.track,
+.filled {
+  stroke-width: 3;
+  fill: none;
+}
+
+.track {
+  stroke: rgba(160, 215, 231, 0.85);
+}
+
+.filled {
+  stroke: blue;
+  stroke-dashoffset: 94;
+  stroke-dasharray: 440;
+}

@@ -2,13 +2,15 @@ import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/router';
 import { Movie } from '../interface/movie';
 import { DatePipe } from '@angular/common';
+import { AppComponent } from '../app.component';
+import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-movie-recommend',
   standalone: true,
   templateUrl: './movie-recommend.component.html',
   styleUrls: ['./movie-recommend.component.css'],
-  imports: [RouterLink]
+  imports: [RouterLink,ProgressBarComponent]
 })
 export class MovieRecommendComponent {
   @Input() movie!:Movie

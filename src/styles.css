@@ -20,3 +20,17 @@ body { font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 50%;
     opacity: .6;
 }
+
+
+
+.progress-bar {
+    position: absolute;
+    top: 125px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(183, 59, 59);
+}
