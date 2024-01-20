@@ -6,7 +6,12 @@
   margin-left: -8px;
 }
 .fa-regular.filled {
+<<<<<<< HEAD
   color: #f5d636;
+=======
+    font-weight: 900;
+    color: #f5d636;
+>>>>>>> 194f440bfb0a006ccb4af8465edaa11684d70704
 }
 
 img {
