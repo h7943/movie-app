@@ -24,11 +24,11 @@ export class WishListComponent implements OnInit {
   
   ngOnInit() {
   }
-  toggleWishlist(): void {
-    if (this.wishlistService.isInWishlist(this.movie)) {
-      this.wishlistService.removeFromWishlist(this.movie);
-    } else {
-      this.wishlistService.addToWishlist(this.movie);
-    }
-  }
+  // toggleWishlist(): void {
+  //   if (this.wishlistService.isInWishlist(this.movie)) {
+  //     this.wishlistService.removeFromWishlist(this.movie);
+  //   } else {
+  //     this.wishlistService.addToWishlist(this.movie);
+  //   }
+  // }
 }

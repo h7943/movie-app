@@ -10,16 +10,20 @@
 .card-img-top {
     width: 100%;
     border-radius: 4px;
+    height: 100%;
 }
 
 .card-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: #333;
+    
 }
 
 .card-text {
     color: #666;
+    overflow: hidden;
+    height: 99px;
 }
 
 .btn-primary {

@@ -2,23 +2,22 @@
   <h1 class="mb-4">WishList</h1>
   <div class="row m-0">
     @for(movie of wishlistService.getWishlist(); track movie.id ; let i = $index){
-    <div class="movie-card col-md-6 ">
-      <div class="row ">
-        <div class="col-md-4">
-          <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" alt="Movie Poster">
-        </div>
-        <div class="col-md-8">
-          <div class="movie-details">
-            <div class="d-flex  mt-2">
-              <h1 class="card-text me-auto">{{movie.title}}</h1>
-              <span (click)="toggleWishlist() " style="cursor: pointer;">
-                <i class="fa-regular fa-heart fa-2x" [class.filled]="wishlistService.isInWishlist(movie)"></i>
-              </span>
-            </div>
-            <p class="card-text">{{ movie.overview }}</p>
+    <div class="col-md-6 mb-4">
+      <div class="movie-card">
+        <div class="row ">
+          <div class="col-md-4">
+            <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" alt="Movie Poster">
           </div>
-          <div class="action-buttons">
-            <button class="btn btn-primary" (click)="removeFromWishlist(movie)">Remove from Wishlist</button>
+          <div class="col-md-8">
+            <div class="movie-details">
+              <div class="d-flex  mt-2">
+                <h1 class="card-text me-auto">{{movie.title}}</h1>
+                <span (click)="removeFromWishlist(movie)" style="cursor: pointer;">
+                  <i class="fa-regular fa-heart fa-2x" [class.filled]="wishlistService.isInWishlist(movie)"></i>
+                </span>
+              </div>
+              <p class="card-text">{{ movie.overview }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -30,7 +29,7 @@
         <img src="../../assets/heart-slash.png">
         <p class="fs-3">No Movies in watch list </p>
         <button class="btn btn-primary">
-          <a routerLink="/" >
+          <a routerLink="/">
             Back to Home Page
           </a>
 
