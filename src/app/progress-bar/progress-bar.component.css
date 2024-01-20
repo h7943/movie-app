@@ -1,0 +1,17 @@
+.track,
+.filled {
+  stroke-width: 7;
+  fill: none;
+}
+
+.track {
+  stroke: rgba(160, 215, 231, 0.85);
+  fill: azure;
+}
+
+.filled {
+  stroke: blue;
+  stroke-dashoffset: 94;
+  stroke-dasharray: 440;
+  /* fill: azure; */
+}

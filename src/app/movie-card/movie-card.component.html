@@ -1,9 +1,16 @@
-<div style="height: 450px;" class=" m-2">
+<div style="height: 450px;" class=" me-0 m-2">
   <div class="card-body">
-    <img style="height: 300px;cursor: pointer;" (click)="redirectToDetails(movieItem.id)"
-      [src]="'https://image.tmdb.org/t/p/w500/' + movieItem.poster_path" class="card-img-top" [alt]="movieItem.title">
-    <h4 class="card-title mt-5" style="cursor: pointer;" [ngClass]="movieItem.adult ?'text-success':''"
-      (click)="redirectToDetails(movieItem.id)">{{movieItem.title}}</h4>
+    <div style="position: relative;">
+      <img style="height: 350px; cursor: pointer;" (click)="redirectToDetails(movieItem.id)"
+           [src]="'https://image.tmdb.org/t/p/w500/' + movieItem.poster_path" class="card-img-top" [alt]="movieItem.title">
+           <div class="progress-bar">
+					<app-progress-bar [precentage]="10"></app-progress-bar>
+           </div>
+           <span class="ellipse-circul">
+            <i class="fa-solid fa-ellipsis"></i>
+        </span>        
+    </div>
+    <h5 class="card-title mt-4" style="cursor: pointer;font-weight: 800;"(click)="redirectToDetails(movieItem.id)">{{movieItem.title}}</h5>
   </div>
   <div class="d-flex p-2 mt-2">
     <span class="card-text date me-auto">{{date}}</span>
@@ -12,5 +19,5 @@
     </span>
   </div>
   <div>
-  </div>
+</div>
 

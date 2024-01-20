@@ -6,6 +6,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 
 @Component({
+
   selector: 'app-wish-list',
   templateUrl: './wish-list.component.html',
   styleUrls: ['./wish-list.component.css'],

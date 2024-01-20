@@ -6,11 +6,12 @@ import { PaginationService } from '../services/pagination-service.service';
 import { PaginationComponent } from '../paginations/paginations.component';
 import { FormsModule } from '@angular/forms';
 import { Data } from '@angular/router';
+import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-movie-list',
   standalone: true,
-  imports: [MovieCardComponent,PaginationComponent,FormsModule],
+  imports: [MovieCardComponent,PaginationComponent,FormsModule,ProgressBarComponent],
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css'],
 })
@@ -19,7 +20,6 @@ export class MovieListComponent implements OnInit {
   currentPage: number = 1;
   totalPages: number = 1;
   name: string = '';
-
   constructor(
     private moviesService: MoviesService,
     private paginationService: PaginationService
@@ -53,19 +53,19 @@ export class MovieListComponent implements OnInit {
     this.paginationService.setCurrentPage(page);
   }
   
-  getSearch(movieName: string = this.name): void {
-    this.moviesService.getSearch(movieName).subscribe((data:Data) => {
-      const movies = data['results'];
-      // Loop through the array of movie objects
-      for (const movie of movies) {
-        // Access the "title" property and log the title
-        if(movie.title){
-          console.log(movie);
-        }
+  // getSearch(movieName: string = this.name): void {
+  //   this.moviesService.getSearch(movieName).subscribe((data:Data) => {
+  //     const movies = data['results'];
+  //     // Loop through the array of movie objects
+  //     for (const movie of movies) {
+  //       // Access the "title" property and log the title
+  //       if(movie.title){
+  //         console.log(movie);
+  //       }
         
-      }
-    });
-  }
+  //     }
+  //   });
+  // }
   
 }
 
