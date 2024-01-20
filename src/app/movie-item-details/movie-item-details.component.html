@@ -19,7 +19,7 @@
                 <!-- <ngb-rating style="font-size: 34px;margin-top:-18px;color:#E4BA10" class="card-text mb-3 me-3" [rate]="movie.vote_average" />     -->
                 <span class="text-danger">({{movie.vote_count}})</span>
             </div>
-            <div style="font-size: 14px; font-weight: 300;" class="col-md-12">
+            <div style="font-size: 13px; font-weight: 300;" class="col-md-12">
                 <p>{{ movie.overview }}</p>
             </div>
             <div class="col-md-12">
@@ -30,13 +30,16 @@
         </div>
         <div class="col-md-9 mt-3">
             <div class="d-flex flex-column mt-2">
-                <span class="card-text col-md-4 mb-2">Time-Duration: {{ movie.runtime }} Min</span>
-                <div class="d-flex col flex-wrap">
-                    <span class="me-md-auto mb-2 mb-md-0">Language:</span>
-                    <span *ngFor="let item of movie.spoken_languages" class="me-3 mb-2"> {{ item.english_name }}</span>
+                <span class="card-text col-md-6 mb-2">Time-Duration: {{ movie.runtime }} Min</span>
+                <div class="d-flex col flex-wrap mt-2">
+                    <span class="card-text col-md-2 me-2 mb-2">Language:</span>
+                    <span class="card-text col-md-8 mb-2">
+                        <span *ngFor="let item of movie.spoken_languages" class="me-1"> {{ item.english_name }}</span>
+                    </span>
                 </div>
             </div>
-        </div>        
+        </div>
+               
 
         <div class="col-md-12 mt-2">
             @for (logo of logos; track $index) {
