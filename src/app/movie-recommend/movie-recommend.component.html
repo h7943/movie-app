@@ -4,14 +4,16 @@
 			<img style="height: 260px; cursor: pointer;" (click)="redirectToDetails(movie.id)"
 				 [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" [alt]="movie.title">
 				 <div class="progress-bar">
-					<app-progress-bar ></app-progress-bar>
+					<app-progress-bar [precentage]="movie.vote_average"></app-progress-bar>
 				 </div>
 			<span class="ellipse-circul">
 				  <i class="fa-solid fa-ellipsis"></i>
 			</span>        
 		</div>
+		
 		<h6 class="card-title mt-4" style="cursor: pointer;" (click)="redirectToDetails(movie.id)">{{movie.title}}</h6>
 	</div>
+	<div>{{movie.vote_average}}</div>
 	<div class="d-flex p-2">
 		<span class="date me-auto">{{date}}</span>
 		<!-- <span class="ms-auto"><i class="fa-regular fa-heart fa-2x"></i></span> -->

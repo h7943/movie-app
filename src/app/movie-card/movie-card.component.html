@@ -3,6 +3,9 @@
     <div style="position: relative;">
       <img style="height: 350px; cursor: pointer;" (click)="redirectToDetails(movieItem.id)"
            [src]="'https://image.tmdb.org/t/p/w500/' + movieItem.poster_path" class="card-img-top" [alt]="movieItem.title">
+           <div class="progress-bar">
+					<app-progress-bar [precentage]="10"></app-progress-bar>
+           </div>
            <span class="ellipse-circul">
             <i class="fa-solid fa-ellipsis"></i>
         </span>        
@@ -16,5 +19,5 @@
     </span>
   </div>
   <div>
-  </div>
+</div>
 

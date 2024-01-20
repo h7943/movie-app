@@ -25,12 +25,8 @@ body { font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .progress-bar {
     position: absolute;
-    top: 125px;
-    right: 15px;
+    bottom: -40px;
+    left: 5px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 200px;
-    background-color: rgb(183, 59, 59);
+
 }
