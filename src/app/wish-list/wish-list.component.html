@@ -1,19 +1,31 @@
 
 <div class="container mt-5">
   <h1 class="mb-4">WishList</h1>
-
     <div class="row m-0">
-        <div class="col-md-4" *ngFor="let movie of wishlistService.getWishlist()">
-          <div class="card">
-            <img  [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" alt="Left Image">
-            <div class="card-body">
-              <h3 class="card-title">{{movie.title}}</h3>
-              <p class="card-text">{{ movie.overview }}</p>
-              <span class="rate">★ ★ ★ ★ ☆</span>
-              <button class="btn btn-primary" (click)="removeFromWishlist(movie)">Remove from Wishlist</button>
+        @for(movie of wishlistService.getWishlist(); track movie.id ; let i = $index){
+          <div class="col-md-4">
+            <div class="card">
+              <img  [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" alt="Left Image">
+              <div class="card-body">
+                <h3 class="card-title">{{movie.title}}</h3>
+                <p class="card-text">{{ movie.overview }}</p>
+                <span class="rate">★ ★ ★ ★ ☆</span>
+                <button class="btn btn-primary" (click)="removeFromWishlist(movie)">Remove from Wishlist</button>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
+        }
+         @empty {  <div class="col-12 ">
+        <div class="empty my-5 text-center">
+        <img src="../../assets/heart-slash.png">
+        <p class="fs-3">No Movies in watch list </p>
+        <button class="btn bg-primaryColor">Back To Home</button>
+       </div>
+          </div>
+    
+        }
+      </div>
   
 </div>
+
+
