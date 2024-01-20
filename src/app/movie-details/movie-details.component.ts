@@ -6,6 +6,7 @@ import { MovieItemDetailsComponent } from "../movie-item-details/movie-item-deta
 import { MovieRecommendComponent } from "../movie-recommend/movie-recommend.component";
 import { ActivatedRoute, Data, Router } from "@angular/router";
 import { NotFoundComponent } from "../not-found/not-found.component";
+import { WishlistService } from "../services/wishlist.service";
 @Component({
     selector: "app-movie-details",
     standalone: true,
@@ -17,7 +18,7 @@ export class MovieDetailsComponent implements OnChanges {
   movie !: Movie;
   movies : Movie[] = [];
   @Input() id!: number;
-  constructor(private moviesService: MoviesService,private route:ActivatedRoute, private router: Router) {}
+  constructor(private moviesService: MoviesService,private route:ActivatedRoute, private router: Router,public wishlistService: WishlistService) {}
 
   ngOnChanges() {
     // const currentId : any = this.route.snapshot.paramMap.get('id');
@@ -37,4 +38,5 @@ export class MovieDetailsComponent implements OnChanges {
     });
 
   }
+  
 }

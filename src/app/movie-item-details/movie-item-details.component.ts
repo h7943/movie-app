@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Movie, Companie } from '../interface/movie';
 import { Genre } from '../interface/movie';
 import { DatePipe, NgClass, NgIf } from '@angular/common';
+import { WishlistService } from '../services/wishlist.service';
 // NgbRatingModule
 @Component({
   selector: 'app-movie-item-details',
@@ -17,7 +18,7 @@ export class MovieItemDetailsComponent implements OnChanges, OnInit {
   logos!: string[];
   names!: string[];
   date!: string
-  constructor(private route: ActivatedRoute,private datePipe: DatePipe) { }
+  constructor(private route: ActivatedRoute,private datePipe: DatePipe,public wishlistService: WishlistService) { }
   ngOnInit(): void {
     this.date = this.formatDate(this.movie.release_date);
   }
@@ -32,13 +33,13 @@ export class MovieItemDetailsComponent implements OnChanges, OnInit {
   private formatDate(date: Date | string): string {
     return this.datePipe.transform(date, 'MMM d, y') || '';
   }
-  isHeartFilled: boolean = true;
 
-  colorHeart() {
-    this.isHeartFilled = false
-  }
-  removeColor(){
-    this.isHeartFilled = true
+  toggleWishlist(): void {
+    if (this.wishlistService.isInWishlist(this.movie)) {
+      this.wishlistService.removeFromWishlist(this.movie);
+    } else {
+      this.wishlistService.addToWishlist(this.movie);
+    }
   }
 }
 
