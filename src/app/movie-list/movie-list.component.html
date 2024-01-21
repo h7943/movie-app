@@ -1,6 +1,6 @@
 
   <div class="row m-4">
-    <div style="background-color: rgb(219, 235, 239);" class="col-md-12 p-4 m-1">
+    <div class="lis col-md-12 p-4 m-1">
       <div class="">
         <h3>Welcome to Our Movie</h3>
         <p>This is a simple website to display movies.</p>
@@ -15,12 +15,11 @@
       </div>
     </div>
   </div>
-
   <h1 class="m-3 p-2">Popular Movies</h1>
-  
   <div style="padding: 2vw;" class="row mb-5 row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
     @for (movie of movies; track movie.id; let i = $index){
     <div class="col">
+       <!-- <app-progress-bar [precentage]="movies"></app-progress-bar> -->
       <app-movie-card [movieItem]="movie"></app-movie-card>
     </div>
     }@empty{
