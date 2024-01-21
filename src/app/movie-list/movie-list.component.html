@@ -5,14 +5,14 @@
         <h3>Welcome to Our Movie</h3>
         <p>This is a simple website to display movies.</p>
       </div>
-      <div class="form-group">
+      <form (ngSubmit)="searchMovies()" >
         <div class="input-group">
-          <input type="text" class="form-control me-3" [(ngModel)]="name" id="exampleInput" placeholder="Type here...">
+          <input type="text" class="form-control me-3" [(ngModel)]="searchQuery"  name="movieName" id="exampleInput" placeholder="Type here...">
           <div class="input-group-append">
-            <button type="button" class="btn btn-info">Search</button>
+            <button type="submit" class="btn btn-info">Search</button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 

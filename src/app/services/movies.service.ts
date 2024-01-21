@@ -29,12 +29,12 @@ export class MoviesService {
     );
   }
 
-  // getSearch(movieName: string): Observable<any> {
-  //   const url = `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${movieName}`;
-  //   return this.http.get(url).pipe(
-  //     catchError(this.handleError)
-  //   );
-  // }
+  getSearch(movieName: string): Observable<any> {
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&movieName=${movieName}`;
+    return this.http.get(url).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error occurred';

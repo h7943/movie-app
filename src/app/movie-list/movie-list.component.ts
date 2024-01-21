@@ -5,8 +5,9 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { PaginationService } from '../services/pagination-service.service';
 import { PaginationComponent } from '../paginations/paginations.component';
 import { FormsModule } from '@angular/forms';
-import { Data } from '@angular/router';
+import { Data ,Router} from '@angular/router';
 import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
+
 
 @Component({
   selector: 'app-movie-list',
@@ -19,10 +20,12 @@ export class MovieListComponent implements OnInit {
   movies: Movie[] = [];
   currentPage: number = 1;
   totalPages: number = 1;
-  name: string = '';
+  searchQuery: string = '';
+
   constructor(
     private moviesService: MoviesService,
-    private paginationService: PaginationService
+    private paginationService: PaginationService,
+    private router: Router
   ) {}
 
 
@@ -51,6 +54,12 @@ export class MovieListComponent implements OnInit {
 
   onPageChange(page: number): void {
     this.paginationService.setCurrentPage(page);
+  }
+
+  searchMovies() {
+    if (this.searchQuery) {
+      this.router.navigate(['/search-results'], { queryParams: { movieName: this.searchQuery } });
+    }
   }
   
   // getSearch(movieName: string = this.name): void {
