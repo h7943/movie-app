@@ -1,7 +1,9 @@
 <div class="row me-2">
     <div class="col-md-4 me-4 ">
-        <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="poster card-img-top"
+        @if(movie.poster_path != null){
+            <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="poster card-img-top"
             [alt]="movie.title">
+        }
     </div>
     <div class="col-md-6">
         <div class="d-flex  mt-2">

@@ -31,32 +31,19 @@ export class SearchComponent implements OnInit {
     });
     
   }
-//   this.moviesService.getSearch(movieName).subscribe((data:Data) => {
-  //     const movies = data['results'];
-  //     console.log(da)
-  //     // Loop through the array of movie objects
-  //     for (const movie of movies) {
-  //       // Access the "title" property and log the title
-  //       // if(movie.title){
-  //       //   console.log(movie);
-  //       // }
-        
-  //     }
-  //   });
+
   searchMovies(movieName: string = this.searchQuery) {
-      this.moviesService.getSearch(movieName).subscribe((data:Data) => {
-      const movies = data['results'];
-      console.log(movies)
-      // Loop through the array of movie objects
-      for (const movie of movies) {
-        // Access the "title" property and log the title
-        // if(movie.title){
-        //   console.log(movie);
-        // }
+      this.moviesService.getSearch(movieName).subscribe(
+        (data) => {
+      console.log('API Response:', data);
+          this.searchResults = data.results;
         
-      }
-    });
-    
+      console.log(this.searchResults)
+        },
+        (error) => {
+          console.error('API Error:', error);
+        }
+      );
   }
   
 

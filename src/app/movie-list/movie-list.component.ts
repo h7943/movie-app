@@ -62,21 +62,5 @@ export class MovieListComponent implements OnInit {
     }
   }
   
-  
-  getSearch(movieName: string = this.searchQuery): void {
-    this.moviesService.getSearch(movieName).subscribe((data:Data) => {
-      const movies = data['results'];
-      console.log(data)
-      // Loop through the array of movie objects
-      for (const movie of movies) {
-        // Access the "title" property and log the title
-        // if(movie.title){
-        //   console.log(movie);
-        // }
-        
-      }
-    });
-  }
-  
 }
 

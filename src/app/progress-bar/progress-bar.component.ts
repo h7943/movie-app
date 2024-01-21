@@ -23,13 +23,15 @@ export class ProgressBarComponent implements OnInit {
   private updateProgressBar(): void {
     const a = -3.46;
     const b = 440;
-
-    const filledElements = this.el.nativeElement.querySelectorAll('.filled');
-
+  
+    // Convert NodeList to an array
+    const filledElements = Array.from(this.el.nativeElement.querySelectorAll('.filled')) as unknown as NodeListOf<HTMLElement>;
+  
     filledElements.forEach((concernedCircle: HTMLElement, index: number) => {
       const percentage = this.percentages[index];
-      const finalOffset = Math.round(a * 10 *percentage + b);
+      const finalOffset = Math.round(a * 10 * percentage + b);
       this.renderer.setStyle(concernedCircle, 'strokeDashoffset', finalOffset + '');
     });
   }
+  
 }

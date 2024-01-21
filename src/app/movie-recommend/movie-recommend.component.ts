@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import {
   ActivatedRoute,
   Router,
@@ -8,13 +8,14 @@ import {
 import { Movie } from "../interface/movie";
 import { CommonModule, DatePipe } from "@angular/common";
 import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
+import { CustomDatePipe } from "../pipes/format-date.pipe";
 
 @Component({
   selector: "app-movie-recommend",
   standalone: true,
   templateUrl: "./movie-recommend.component.html",
   styleUrls: ["./movie-recommend.component.css"],
-  imports: [RouterLink, ProgressBarComponent,CommonModule]
+  imports: [RouterLink, ProgressBarComponent,CommonModule,CustomDatePipe]
 })
 export class MovieRecommendComponent {
   @Input() movie!: Movie;
@@ -26,17 +27,20 @@ export class MovieRecommendComponent {
     private datePipe: DatePipe
   ) {}
   ngOnInit(): void {
-    this.date = this.formatDate(this.movie.release_date);
+
+    
   }
+  
   redirectToDetails(id: number) {
     const currentId: any = this.route.snapshot.paramMap.get("id");
-    this.router.navigate([`/movie-details/${id}`]);
+  
     if (this.movie.id != currentId) {
-      window.scrollTo(0, 0);
+      // Scroll to the top with a smooth transition
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  }
-  private formatDate(date: Date | string): string {
-    return this.datePipe.transform(date, "MMM d, y") || "";
+  
+    // Navigate to the movie details page
+    this.router.navigate([`/movie-details/${id}`]);
   }
 
 }

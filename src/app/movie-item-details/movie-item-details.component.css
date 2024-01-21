@@ -4,10 +4,16 @@
   box-shadow:  0px -4px 8px rgb(55, 19.4, 0.6), 0px 1px 8px rgb(0, 4, 1);
 }
 .date {
-  font-weight: 200;
+  font-weight: 280;
   font-size: 14px;
   margin-left: 10px;
-  margin-top: -20px;
+}
+p {
+  color: #666565;
+  font-size: 16px;
+  height: 120px;
+  overflow: hidden;
+  overflow-y: auto; /* Add a vertical scrollbar when content overflows */
 }
 desc {
   font-size: 13px; font-weight: 300;
@@ -29,3 +35,6 @@ desc {
   color: #f5d636;
 }
 
+i {
+  color: #f5d636;
+}

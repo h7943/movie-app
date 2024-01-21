@@ -4,17 +4,17 @@ import {  Router } from "@angular/router";
 import { Movie } from "../interface/movie";
 import { WishlistService } from "../services/wishlist.service";
 import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
+import { CustomDatePipe } from "../pipes/format-date.pipe";
 
 @Component({
   selector: "app-movie-card",
   standalone: true,
   templateUrl: "./movie-card.component.html",
   styleUrls: ["./movie-card.component.css"],
-  imports: [NgClass, CommonModule, ProgressBarComponent],
+  imports: [NgClass, CommonModule, ProgressBarComponent,CustomDatePipe],
 })
 export class MovieCardComponent implements OnInit {
   @Input() movieItem!: Movie;
-  date!: string;
   constructor(
     private router: Router,
     private datePipe: DatePipe,
@@ -23,14 +23,10 @@ export class MovieCardComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.date = this.formatDate(this.movieItem.release_date);
   }
 
   redirectToDetails(id: number) {
     this.router.navigate(["/movie-details", id]);
-  }
-  private formatDate(date: Date | string): string {
-    return this.datePipe.transform(date, "MMM d, y") || "";
   }
 
   toggleWishlist(): void {
