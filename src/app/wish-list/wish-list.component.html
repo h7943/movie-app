@@ -11,12 +11,12 @@
           <div class="col-md-8">
             <div class="movie-details">
               <div class="d-flex  mt-2">
-                <h1 class="card-text me-auto">{{movie.title}}</h1>
+                <h1 class="me-auto">{{movie.title}}</h1>
                 <span (click)="removeFromWishlist(movie)" style="cursor: pointer;">
                   <i class="fa-regular fa-heart fa-2x" [class.filled]="wishlistService.isInWishlist(movie)"></i>
                 </span>
               </div>
-              <span>{{movie.release_date |customDate}}</span>
+              <span class="sp">{{movie.release_date |customDate}}</span>
               <p class="card-text">{{ movie.overview }}</p>
             </div>
           </div>
