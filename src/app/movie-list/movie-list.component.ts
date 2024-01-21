@@ -5,8 +5,9 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { PaginationService } from '../services/pagination-service.service';
 import { PaginationComponent } from '../paginations/paginations.component';
 import { FormsModule } from '@angular/forms';
-import { Data } from '@angular/router';
+import { Data ,Router} from '@angular/router';
 import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
+
 
 @Component({
   selector: 'app-movie-list',
@@ -19,10 +20,12 @@ export class MovieListComponent implements OnInit {
   movies: Movie[] = [];
   currentPage: number = 1;
   totalPages: number = 1;
-  name: string = '';
+  searchQuery: string = '';
+
   constructor(
     private moviesService: MoviesService,
-    private paginationService: PaginationService
+    private paginationService: PaginationService,
+    private router: Router
   ) {}
 
 
@@ -52,22 +55,28 @@ export class MovieListComponent implements OnInit {
   onPageChange(page: number): void {
     this.paginationService.setCurrentPage(page);
   }
+
+  searchMovies() {
+    if (this.searchQuery) {
+      this.router.navigate(['/search-results'], { queryParams: { movieName: this.searchQuery } });
+    }
+  }
   
   
-  // getSearch(movieName: string = this.name): void {
-  //   this.moviesService.getSearch(movieName).subscribe((data:Data) => {
-  //     const movies = data['results'];
-  //     console.log(da)
-  //     // Loop through the array of movie objects
-  //     for (const movie of movies) {
-  //       // Access the "title" property and log the title
-  //       // if(movie.title){
-  //       //   console.log(movie);
-  //       // }
+  getSearch(movieName: string = this.searchQuery): void {
+    this.moviesService.getSearch(movieName).subscribe((data:Data) => {
+      const movies = data['results'];
+      console.log(data)
+      // Loop through the array of movie objects
+      for (const movie of movies) {
+        // Access the "title" property and log the title
+        // if(movie.title){
+        //   console.log(movie);
+        // }
         
-  //     }
-  //   });
-  // }
+      }
+    });
+  }
   
 }
 

@@ -4,7 +4,7 @@
 			<img (click)="redirectToDetails(movie.id)"
 				 [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" [alt]="movie.title">
 				 <div class="progress-bar">
-					<!-- <app-progress-bar [precentage]="5"></app-progress-bar> -->
+					<app-progress-bar [percentages]="[movie.vote_average]"></app-progress-bar>
 				 </div>
 			<span class="ellipse-circul">
 				  <i class="fa-solid fa-ellipsis"></i>
