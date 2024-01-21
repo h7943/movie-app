@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-star-rating',
   standalone: true,
   template: `
-    <div class="star-rating">
+    <div style="width: 300px;" class="star-rating">
       <span class="me-3 text-dark">Rate: </span>
       <!-- Static stars with fixed color and size -->
       <i class="fas fa-star static-star" *ngFor="let _ of staticStars"></i>
