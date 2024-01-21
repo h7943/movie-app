@@ -4,16 +4,15 @@ import { Movie } from '../interface/movie';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CustomDatePipe } from '../pipes/format-date.pipe';
-import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { StarRatingComponent } from "../star-rating/star-rating.component";
 
 
 @Component({
-
-  selector: 'app-wish-list',
-  templateUrl: './wish-list.component.html',
-  styleUrls: ['./wish-list.component.css'],
-  imports:[NgFor, NgIf,RouterLink,CustomDatePipe,NgbRatingModule],
-  standalone:true
+    selector: 'app-wish-list',
+    templateUrl: './wish-list.component.html',
+    styleUrls: ['./wish-list.component.css'],
+    standalone: true,
+    imports: [NgFor, NgIf, RouterLink, CustomDatePipe, StarRatingComponent]
 })
 export class WishListComponent implements OnInit {
   @Input() movie!: Movie;
@@ -25,11 +24,5 @@ export class WishListComponent implements OnInit {
   }
   ngOnInit() {
   }
-  // toggleWishlist(): void {
-  //   if (this.wishlistService.isInWishlist(this.movie)) {
-  //     this.wishlistService.removeFromWishlist(this.movie);
-  //   } else {
-  //     this.wishlistService.addToWishlist(this.movie);
-  //   }
-  // }
+
 }
