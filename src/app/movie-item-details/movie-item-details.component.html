@@ -6,7 +6,7 @@
         }
     </div>
     <div class="col-md-6">
-        <div class="d-flex  mt-2">
+        <div class="d-flex  mt-1">
             <h1 class="card-text me-auto">{{movie.title}}</h1>
             <span (click)="toggleWishlist() " style="cursor: pointer;">
                 <i class="fa-regular fa-heart fa-2x" [class.filled]=" wishlistService.isInWishlist(movie)"></i>
@@ -15,7 +15,7 @@
         <span class="date">{{date}}</span>
         <div class="row mt-3">
             <div class="d-flex">
-                <!-- <ngb-rating style="font-size: 34px;margin-top:-18px;color:#E4BA10" class="card-text mb-3 me-3" [rate]="movie.vote_average" />     -->
+                <ngb-rating class="card-text mb-2 me-3" [rate]="movie.vote_average" />    
                 <span class="text-danger">({{movie.vote_count}})</span>
             </div>
             <div class="desc col-md-12">
@@ -46,8 +46,7 @@
             }
         </div>
         <a href="https://www.imdb.com/title/{{movie.imdb_id}}/"
-            style="border-bottom: 1px solid rgb(240, 188, 135);border-top: 1px solid rgb(240, 188, 135);"
-            class="btn text-danger link mt-3" target="_blank">
+            class="btn btn-web text-danger link mt-3" target="_blank">
             Website <i class="fas fa-link"></i>
         </a>
     </div>
