@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
-      this.searchQuery = params['movieName']; 
+      this.searchQuery = params['query']; 
       this.searchMovies();
     });
     
@@ -34,7 +34,6 @@ export class SearchComponent implements OnInit {
   searchMovies() {
       this.moviesService.getSearch(this.searchQuery).subscribe(
         (data) => {
-          console.log('API Response:', data);
           this.searchResults = data.results;
         },
         (error) => {

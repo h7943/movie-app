@@ -58,7 +58,7 @@ export class MovieListComponent implements OnInit {
 
   searchMovies() {
     if (this.searchQuery) {
-      this.router.navigate(['/search-results'], { queryParams: { movieName: this.searchQuery } });
+      this.router.navigate(['/search-results'], { queryParams: {  query: this.searchQuery } });
     }
   }
   
