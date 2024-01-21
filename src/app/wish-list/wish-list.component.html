@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <h1 class="mb-4">WishList</h1>
-  <div class="row m-0">
+  <div style="height: 400px;" class="row m-0">
     @for(movie of wishlistService.getWishlist(); track movie.id ; let i = $index){
     <div class="col-md-6 mb-4">
       <div class="movie-card">
@@ -11,12 +11,16 @@
           <div class="col-md-8">
             <div class="movie-details">
               <div class="d-flex  mt-2">
-                <h1 class="me-auto">{{movie.title}}</h1>
+                <h4 class="me-auto">{{movie.title}}</h4>
                 <span (click)="removeFromWishlist(movie)" style="cursor: pointer;">
                   <i class="fa-regular fa-heart fa-2x" [class.filled]="wishlistService.isInWishlist(movie)"></i>
                 </span>
               </div>
-              <span class="sp">{{movie.release_date |customDate}}</span>
+              <p class="sp">{{movie.release_date |customDate}}</p>
+              <div class="d-flex mb-2">
+                <ngb-rating class="mb-2 me-3" [rate]="movie.vote_average" />
+                <span class="mt-2 text-danger">({{movie.vote_count}})</span>
+              </div>
               <p class="card-text">{{ movie.overview }}</p>
             </div>
           </div>
@@ -40,5 +44,4 @@
 
     }
   </div>
-
 </div>

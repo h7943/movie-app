@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { WishlistService } from '../services/wishlist.service';
 import { Movie } from '../interface/movie';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CustomDatePipe } from '../pipes/format-date.pipe';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { CustomDatePipe } from '../pipes/format-date.pipe';
   selector: 'app-wish-list',
   templateUrl: './wish-list.component.html',
   styleUrls: ['./wish-list.component.css'],
-  imports:[NgFor,RouterLink,CustomDatePipe],
+  imports:[NgFor, NgIf,RouterLink,CustomDatePipe,NgbRatingModule],
   standalone:true
 })
 export class WishListComponent implements OnInit {
@@ -22,12 +23,8 @@ export class WishListComponent implements OnInit {
   removeFromWishlist(movie: Movie): void {
     this.wishlistService.removeFromWishlist(movie);
   }
-  
   ngOnInit() {
   }
-
-
-  
   // toggleWishlist(): void {
   //   if (this.wishlistService.isInWishlist(this.movie)) {
   //     this.wishlistService.removeFromWishlist(this.movie);

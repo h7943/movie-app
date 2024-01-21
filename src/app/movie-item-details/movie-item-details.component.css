@@ -11,13 +11,17 @@
 p {
   color: #666565;
   font-size: 16px;
-  height: 120px;
+  height: 90px;
   overflow: hidden;
   overflow-y: auto; /* Add a vertical scrollbar when content overflows */
 }
-desc {
+.desc {
   font-size: 13px; font-weight: 300;
 }
+ngb-rating{
+  font-size: 32px;margin-top:-12px;color:#E4BA10
+}
+
 .btn1 {
   background-color: #ffe353;
   border: none;
@@ -37,4 +41,8 @@ desc {
 
 i {
   color: #f5d636;
+}
+
+.btn-web {
+  border-bottom: 1px solid rgb(240, 188, 135);border-top: 1px solid rgb(240, 188, 135)
 }
