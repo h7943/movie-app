@@ -16,6 +16,7 @@
                   <i class="fa-regular fa-heart fa-2x" [class.filled]="wishlistService.isInWishlist(movie)"></i>
                 </span>
               </div>
+              <span>{{movie.release_date |customDate}}</span>
               <p class="card-text">{{ movie.overview }}</p>
             </div>
           </div>

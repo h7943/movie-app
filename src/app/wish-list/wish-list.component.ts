@@ -3,6 +3,7 @@ import { WishlistService } from '../services/wishlist.service';
 import { Movie } from '../interface/movie';
 import { NgFor } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { CustomDatePipe } from '../pipes/format-date.pipe';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'app-wish-list',
   templateUrl: './wish-list.component.html',
   styleUrls: ['./wish-list.component.css'],
-  imports:[NgFor,RouterLink],
+  imports:[NgFor,RouterLink,CustomDatePipe],
   standalone:true
 })
 export class WishListComponent implements OnInit {
@@ -24,6 +25,9 @@ export class WishListComponent implements OnInit {
   
   ngOnInit() {
   }
+
+
+  
   // toggleWishlist(): void {
   //   if (this.wishlistService.isInWishlist(this.movie)) {
   //     this.wishlistService.removeFromWishlist(this.movie);

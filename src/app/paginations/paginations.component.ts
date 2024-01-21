@@ -11,7 +11,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class PaginationComponent {
   @Input() currentPage: number = 1;
   @Input() totalPages: number = 1;
-
   @Output() pageChange = new EventEmitter<number>();
 
   constructor() {}
@@ -19,6 +18,7 @@ export class PaginationComponent {
   onPageChange(page: number) {
     if (page > 0 && page <= this.totalPages) {
       this.pageChange.emit(page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 }

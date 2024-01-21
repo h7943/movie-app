@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { TimeFormatPipe } from './time-format.pipe';
+import { PercentagePipe } from './precentage.pipe';
 
-describe('Pipe: TimeFormate', () => {
+describe('Pipe: Precentagee', () => {
   it('create an instance', () => {
-    let pipe = new TimeFormatPipe();
+    let pipe = new PercentagePipe();
     expect(pipe).toBeTruthy();
   });
 });

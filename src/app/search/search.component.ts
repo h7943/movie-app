@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Data } from '@angular/router';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { CommonModule, NgFor, NgIf} from '@angular/common';
 import { Movie } from '../interface/movie';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,7 @@ import { Movie } from '../interface/movie';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
   standalone:true,
-  imports:[MovieCardComponent,NgFor,NgIf]
+  imports:[MovieCardComponent,NgFor,NgIf,FormsModule]
 
 })
 export class SearchComponent implements OnInit {
@@ -31,10 +32,13 @@ export class SearchComponent implements OnInit {
     
   }
 
-  searchMovies() {
-      this.moviesService.getSearch(this.searchQuery).subscribe(
+  searchMovies(movieName: string = this.searchQuery) {
+      this.moviesService.getSearch(movieName).subscribe(
         (data) => {
+          console.log('API Response:', data);
           this.searchResults = data.results;
+        
+      console.log(this.searchResults)
         },
         (error) => {
           console.error('API Error:', error);
